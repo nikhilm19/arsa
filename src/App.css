@@ -1,38 +1,202 @@
 .App {
-  text-align: center;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.main-nav {
+	opacity: 1;
+	transition: opacity 0.4s, visibility 0s 0.4s;
+	width: 100%;
+	background: #000;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: #fff;
+	margin: 0;
+	font-size: 36px;
+	line-height: 52px;
 
+	font-family: "Righteous", cursive;
+	display: flex;
+}
+.app-header {
+	width: 100%;
+}
+.arsa-logo.container {
+	width: 100%;
+	text-align: left;
+	position: sticky;
+	top: 0;
+}
+.arsa-logo {
+	/* height: 40vmin; */
+	pointer-events: none;
+}
+ul.nav-menu-list {
+	margin: auto;
+	padding: 10px;
+	width: 100%;
+	/* height: 100%; */
+}
+ul.nav-menu-list li {
+	list-style: none;
+	margin: 0;
+	border-top: 2px solid #fff;
+	padding: 10px;
+	font-size: 20px;
+	text-align: left;
+}
+.navbar {
+	width: 100%;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #ffff;
+	min-height: 100vh;
+	position: fixed;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+
+}
+.social svg {
+  margin: 5px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (min-width: 700px) {
+  .main{
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+	.App {
+		padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 50px; */
+	}
+
+	.App-header {
+		width: 100%;
+		min-height: 10vh;
+		display: flex;
+		position: sticky;
+		/* margin-top: 10px; */
+	}
+  p.para-one{
+
+    font-family: 'Cantarell', sans-serif;font-size: 40px;
+    width: 70%;
+    line-height: 60px;
+    font-weight: lighter;
+    color: #898989;
+    text-align: left;
+
   }
+  .para-one span{
+    text-decoration: underline;
+    text-decoration-color: rgb(2, 221, 31);
+    font-weight: bold;
+    color: #000;
+
+  }
+  .featured-projects ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .featured-projects a {
+    text-decoration: none;
+    color: #414141;
+  }
+  
+  .featured-projects a:hover {
+    color: #000;
+  }
+  .featured-projects li {
+
+   list-style: none;
+   font-size: 20px;
+   margin-right: 20px;
+   width: 23%;
+   margin-bottom: 50px;
+   border-top: 1px rgb(74, 74, 74) solid;
+   text-align: left;
+   color: #414141;
+   transition: 0.2s
+  }
+  .featured-projects li:hover{
+    border-top:1px solid rgb(2, 221, 31);
+    
+  }
+	.arsa-logo {
+		width: 200px;
+		height: 200px;
+	}
+	.arsa-logo.container {
+		width: 20%;
+	}
+	.main-nav {
+		background-color: #fff;
+		color: #000;
+		width: auto;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		margin: 10px;
+		position: relative;
+		margin: 0 10px 0 auto;
+	}
+	.nav-menu-list ul {
+	}
+	.nav-menu-list li {
+		font-size: 16px !important;
+		margin: 5px !important;
+	}
+	.nav-menu-list .container {
+		display: flex;
+		justify-content: end;
+	}
+
+  .site-footer .container{
+    display: flex;
+    width: 100%;
+    border-top: 1px rgb(74, 74, 74) solid;
+    padding-top: 10px;
+  }
+  .site-footer .container div{
+    width: 23%;
+    margin-right: 20px;
+  }
+  .site-footer{
+    display: flex;
+    padding: 20px;
+    color: #898989;
+  
+  }
+  
 }
