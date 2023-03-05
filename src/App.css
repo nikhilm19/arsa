@@ -7,6 +7,7 @@
 	display: flex;
 	/* background-color: #61dafb; */
 	width: 100%;
+	position: fixed;
 }
 
 .App {
@@ -28,6 +29,8 @@
 	margin-top: 30px;
 	border-radius: 100%;
 	border: 2px solid black;
+	z-index: 6;
+	transition: 2s;
 }
 .main-nav {
 	opacity: 0;
@@ -47,12 +50,24 @@
 	display: flex;
 }
 
+.nav-open.main-nav{
+
+	background-color: #000;
+	opacity: 1;
+	z-index: 2;
+}
+
+.nav-btn.nav-open{
+	z-index: 8;
+	background-color: #69fb61;
+}
 .arsa-logo.container {
 	width: 50px;
 	width: 100%;
 	text-align: left;
 	position: sticky;
 	top: 0;
+	z-index: 5;
 }
 .arsa-logo.container img {
 	height: 100px;
