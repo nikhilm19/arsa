@@ -1,6 +1,8 @@
 .main {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+	padding-top: 200px;
 }
 
 .App-header {
@@ -9,7 +11,9 @@
 	width: 100%;
 	position: fixed;
 	background-color: #fff;
+	z-index: 3;
 }
+
 
 .App {
 	text-align: center;
@@ -30,10 +34,12 @@
 	margin-top: 30px;
 	border-radius: 100%;
 	border: 2px solid black;
-	z-index: 6;
 	transition: 2s;
+	z-index: 3;
+	position: relative;
 }
 .main-nav {
+	visibility: hidden;
 	opacity: 0;
 	transition: opacity 0.4s, visibility 0s 0.4s;
 	width: 100%;
@@ -49,34 +55,48 @@
 
 	font-family: "Righteous";
 	display: flex;
+	z-index: 2;
 }
 
 .nav-open.main-nav{
 
 	background-color: #000;
 	opacity: 1;
-	z-index: 2;
+	visibility: visible;
 }
 
 .nav-btn.nav-open{
-	z-index: 8;
+	
 	background-color: #69fb61;
 }
 .arsa-logo.container {
 	width: 50px;
 	width: 100%;
 	text-align: left;
-	position: sticky;
+	position: relative;
 	top: 0;
-	z-index: 5;
+}
+.small-image img{
+	width: inherit;
+}
+.multi-image-right{
+
+	width: auto;
+}
+.multi-image-right img {
+	width:auto;
+	text-align: right;
 }
 .arsa-logo.container img {
 	height: 100px;
 	width: 100px;
+	position: relative;
 }
 .arsa-logo {
-	/* height: 40vmin; */
+	height: 40vmin;
 	pointer-events: none;
+	z-index: 3;
+	position: relative;
 }
 ul.nav-menu-list {
 	margin: auto;
@@ -141,7 +161,7 @@ p.para-one {
 }
 
 .site-footer .container {
-	display: flex;
+	/* display: flex; */
 	width: 100%;
 	border-top: 1px rgb(74, 74, 74) solid;
 	padding-top: 10px;
@@ -174,6 +194,44 @@ p.para-one {
 .social svg {
 	margin: 5px;
 }
+span.green-dash{
+	background-color: #69fb61;
+	height: 4px !important;
+	display: block;
+}
+.project {
+	padding-top:150px;
+	/* margin: 10px; */
+}
+.project-module {
+	margin-bottom: 20px;
+}
+.project-text-large{
+	margin-bottom: 40px;
+}
+.project-text-large .text{
+	font-size: 24px;
+	line-height: 30px;
+	color: #898989;
+	font-weight: 100;
+}
+.full-width-image img {
+	width: 100%;
+}
+.project-status{
+
+	/* border-top: 1px solid green; */
+}
+.project-status ul{
+
+	list-style: none;
+}
+
+.project-status span{
+	display: block;
+	width: 100%;
+	color: rgb(180, 180, 180);
+}
 
 @keyframes App-logo-spin {
 	from {
@@ -185,12 +243,16 @@ p.para-one {
 }
 
 @media screen and (min-width: 700px) {
+	#root{
+		padding: 10px 60px;
+
+	}
 	.nav-btn {
 		background-color: transparent;
 		display: none;
 	}
 	.main {
-		padding: 10px 50px;
+		padding-top: 80px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -209,6 +271,10 @@ p.para-one {
 		/* margin-top: 10px; */
 	}
 
+	.arsa-logo{
+		height: auto;
+	
+	}
 	.arsa-logo img {
 		width: 200px;
 		height: 200px;
@@ -221,10 +287,12 @@ p.para-one {
 		width: 20%;
 	}
 	.main-nav {
+		visibility: visible;
+	
 		background-color: #fff;
 		color: #000;
 		width: auto;
-		height: auto;
+		/* height: auto; */
 		display: flex;
 		flex-direction: row;
 		margin: 10px;
@@ -235,7 +303,7 @@ p.para-one {
 	.nav-menu-list ul {
 	}
 	.nav-menu-list li {
-		font-size: 16px !important;
+		font-size: 20px !important;
 		margin: 5px !important;
 	}
 	.nav-menu-list .container {
@@ -250,6 +318,17 @@ p.para-one {
 		padding: 0;
 	}
 
+	.small-image img{
+		width: 50% !important;
+	}
+	.multi-image-right{
+	
+		text-align: right;
+	}
+	.multi-image-right img {
+		width: 50% !important;
+		text-align: right;
+	}
 	.featured-projects li {
 		width: 23%;
 	}
@@ -257,22 +336,27 @@ p.para-one {
 		font-size: 40px;
 		width: 70%;
 		line-height: 60px;
+		margin-bottom: 40px;
 	}
 
 	.site-footer .container {
 		flex-direction: row;
 	}
 	.site-footer .container div {
-		margin-bottom: 10px;
-		width: 23%;
-		margin-right: 20px;
 	}
 	.site-footer {
 		display: flex;
-		padding: 20px;
+		/* padding: 20px; */
+		margin-top: 80px;
 		color: #898989;
 	}
 	.social{
 		position: unset;
+	}
+	.project-text-large .text{
+
+		font-size: 42px;
+		line-height: 60px;
+		color: #414141;
 	}
 }

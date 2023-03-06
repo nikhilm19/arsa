@@ -1,21 +1,14 @@
-
-import React from 'react';
-import Intro from './Intro';
+import React from "react";
+import Intro from "./Intro";
 
 export class Home extends React.Component {
-  constructor(){
-    super()
-  }
+	constructor() {
+		super();
+	}
 
-    render(){
-
-        return (
-            <div className="App">
-              <Intro/>
-            </div>
-          );
-    }
- 
+	render() {
+		return <Intro />;
+	}
 }
 
 export default Home;
