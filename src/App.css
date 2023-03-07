@@ -269,7 +269,7 @@ span.green-dash{
 		display: none;
 	}
 	.main {
-		padding-top: 80px;
+		padding-top: 40px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -365,7 +365,7 @@ span.green-dash{
 	.site-footer {
 		display: flex;
 		/* padding: 20px; */
-		margin-top: 80px;
+		margin-top: 40px;
 		color: #898989;
 	}
 	.social{
