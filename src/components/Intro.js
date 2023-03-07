@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Intro = () => {
@@ -11,29 +12,31 @@ const Intro = () => {
 	];
 
 	return (
-		<div className="intro container">
-			<p className="intro para-one">
-				<span className="para-one highlight">
-					Our work is in the dreams.
-				</span>{" "}
-				Cofounded by architects @aeshhhaaa and @rikensha6, #officearsa
-				is a practice that strongly believes in designing contextually
-				relevant spaces.
-			</p>
-			<div className="featured-projects">
-				<ul className="">
-					{projects.map((project, id) => {
-						return (
-							<li className={project.id}>
-								<Link to={`/projects/${project.url}`}>
-									{project.name}
-								</Link>
-							</li>
-						);
-					})}
-				</ul>
+		<Container fluid>
+			<div className="intro">
+				<p className="intro para-one">
+					<span className="para-one highlight">
+						Our work is in the dreams.
+					</span>{" "}
+					Cofounded by architects @aeshhhaaa and @rikensha6,
+					#officearsa is a practice that strongly believes in
+					designing contextually relevant spaces.
+				</p>
+				<div className="featured-projects">
+					<ul className="">
+						{projects.map((project, id) => {
+							return (
+								<li className={project.id}>
+									<Link to={`/projects/${project.url}`}>
+										{project.name}
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
 			</div>
-		</div>
+		</Container>
 	);
 };
 

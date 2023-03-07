@@ -2,16 +2,17 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	padding-top: 200px;
+	padding-top: 20px;
 }
 
 .App-header {
 	display: flex;
 	/* background-color: #61dafb; */
 	width: 100%;
-	position: fixed;
+	position: sticky;
 	background-color: #fff;
 	z-index: 3;
+	top: 0;
 }
 
 
@@ -30,18 +31,18 @@
 	border: none;
 	width: 50px;
 	height: 50px;
-	margin-right: 20px;
-	margin-top: 30px;
+	/* margin-right: 20px; */
+	/* margin-top: 30px; */
 	border-radius: 100%;
 	border: 2px solid black;
-	transition: 2s;
+	transition: 1s;
 	z-index: 3;
 	position: relative;
 }
 .main-nav {
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity 0.4s, visibility 0s 0.4s;
+	transition: opacity 0.1s, visibility 0s 0.1s;
 	width: 100%;
 	background: bisque;
 	position: fixed;
@@ -53,7 +54,7 @@
 	font-size: 36px;
 	line-height: 52px;
 
-	font-family: "Righteous";
+	font-family: "Comfortaa";
 	display: flex;
 	z-index: 2;
 }
@@ -77,7 +78,7 @@
 	top: 0;
 }
 .small-image img{
-	width: inherit;
+	width: 100%;
 }
 .multi-image-right{
 
@@ -98,6 +99,13 @@
 	z-index: 3;
 	position: relative;
 }
+
+.nav-menu-list a {
+	font-size: 20px !important;
+	margin: 5px !important;
+	color: #898989 !important;
+	border-top: 2px solid #fff;
+}
 ul.nav-menu-list {
 	margin: auto;
 	padding: 10px;
@@ -107,7 +115,7 @@ ul.nav-menu-list {
 ul.nav-menu-list li {
 	list-style: none;
 	margin: 0;
-	border-top: 2px solid #fff;
+	
 	padding: 10px;
 	font-size: 20px;
 	text-align: left;
@@ -160,7 +168,7 @@ p.para-one {
 	border-top: 1px solid rgb(2, 221, 31);
 }
 
-.site-footer .container {
+.site-footer .container-fluid {
 	/* display: flex; */
 	width: 100%;
 	border-top: 1px rgb(74, 74, 74) solid;
@@ -196,15 +204,22 @@ p.para-one {
 }
 span.green-dash{
 	background-color: #69fb61;
-	height: 4px !important;
+	height: 2px !important;
 	display: block;
 }
 .project {
-	padding-top:150px;
+	padding-top:10px;
 	/* margin: 10px; */
 }
 .project-module {
 	margin-bottom: 20px;
+}
+.project-module.feature-text{
+	font-family: "Cantarell";
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 100;
+	color: #898989;
 }
 .project-text-large{
 	margin-bottom: 40px;
@@ -214,6 +229,9 @@ span.green-dash{
 	line-height: 30px;
 	color: #898989;
 	font-weight: 100;
+}
+.project-text-body{
+	margin-top: 10px !important;
 }
 .full-width-image img {
 	width: 100%;
@@ -243,9 +261,8 @@ span.green-dash{
 }
 
 @media screen and (min-width: 700px) {
-	#root{
-		padding: 10px 60px;
-
+	.container, .container-fluid{
+		width: 88.275862069% !important;
 	}
 	.nav-btn {
 		background-color: transparent;
@@ -302,9 +319,10 @@ span.green-dash{
 	}
 	.nav-menu-list ul {
 	}
-	.nav-menu-list li {
+	.nav-menu-list a {
 		font-size: 20px !important;
 		margin: 5px !important;
+		color: #000 !important;
 	}
 	.nav-menu-list .container {
 		display: flex;
@@ -319,7 +337,7 @@ span.green-dash{
 	}
 
 	.small-image img{
-		width: 50% !important;
+		/* width: 50% !important; */
 	}
 	.multi-image-right{
 	

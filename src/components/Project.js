@@ -6,18 +6,39 @@ import Uber1 from "../assets/uber1.jpg";
 import Uber2 from "../assets/uber2.jpg";
 
 const renderImages = (imageData) => {
-	return (
-		<Row className="project-module">
-			{imageData.map((img) => {
-				return (
-					<Col xs={12} className={`project-module ${img.isMultiImage?"small-image":"full-width-image"}`} >
-						<img src={img.url} className="project-module"></img>
-                        {img.isMultiImage?<Col lg={6}>{img.text}</Col>:""}
+	return imageData.map((img) => {
+		return (
+			<Row className="project-module">
+				<Col
+					lg={{
+						span: img.isMultiImage ? 6 : 12,
+						order: img.isMultiImage && img.left ? 2 : 1,
+					}}
+					className={`d-flex project-module ${
+						img.isMultiImage ? "small-image" : "full-width-image"
+					}`}
+				>
+					<img src={img.url} className="project-module">
+						{}
+					</img>
+				</Col>
+				{img.isMultiImage ? (
+					<Col
+						lg={{
+							span: img.isMultiImage ? 3 : 12,
+							order: img.isMultiImage && img.left ? 1 : 2,
+						}}
+						className="project-module feature-text"
+					>
+						<span className="green-dash"></span>
+						{img.text}
 					</Col>
-				);
-			})}
-		</Row>
-	);
+				) : (
+					""
+				)}
+			</Row>
+		);
+	});
 };
 
 const Project1 = () => {
@@ -34,7 +55,7 @@ const Project1 = () => {
 				{
 					url: Uber2,
 					isMultiImage: true,
-                    left:true,
+					left: true,
 					text: "A feature known as the Commons—a striking network of circulation and gathering spaces—will bring the life of the building into contact with the life of the streets, and allow views of the living city to serve as a continual inspiration for the creative work taking place inside.",
 				},
 				{
@@ -42,16 +63,16 @@ const Project1 = () => {
 					isMultiImage: false,
 					text: "A feature known as the Commons—a striking network of circulation and gathering spaces—will bring the life of the building into contact with the life of the streets, and allow views of the living city to serve as a continual inspiration for the creative work taking place inside.",
 				},
-                {
+				{
 					url: Uber,
 					isMultiImage: true,
-                    left:false,
+					left: false,
 					text: "A feature known as the Commons—a striking network of circulation and gathering spaces—will bring the life of the building into contact with the life of the streets, and allow views of the living city to serve as a continual inspiration for the creative work taking place inside.",
 				},
-                {
+				{
 					url: Uber,
 					isMultiImage: false,
-					text: "A feature known as the Commons—a striking network of circulation and gathering spaces—will bring the life of the building into contact with the life of the streets, and allow views of the living city to serve as a continual inspiration for the creative work taking place inside.",
+					text: "Taking advantage of San Francisco’s temperate climate, the sustainability features of the Uber buildings center on their innovative “breathing” façades—a computer-controlled system of operable windows that greatly reduce the need for mechanical ventilation. The full-building-height indoor/outdoor spaces of the Commons serves as a buffer zone between the unconditioned exterior and the conditioned interior office environment. That feature is an integral part of a whole-building environmental strategy that also includes on-site water collection and solar harvesting, with green space both on the roof and in the public park at ground level. The building is expected to meet LEED Gold requirements when complete.",
 				},
 			],
 			subTexts: [
@@ -70,35 +91,22 @@ const Project1 = () => {
 		<div className="project">
 			<Container fluid>
 				<Row className="project-text-large project-module">
-					
 					<Col xs={12} lg={12}>
 						<span className="green-dash"></span>
 					</Col>
-                    
-					<Col xs={12} lg={8}>
+
+					<Col xs={12} lg={8} className="project-text-body">
 						<p className="text">
 							The <strong>Uber Headquarters </strong>is designed
 							to encourage vibrant life on the streets of its
 							emerging San Francisco neighborhood.
 						</p>
 					</Col>
-                    
 				</Row>
-                {renderImages(projectData.data.images)}
-				<Row className="full-width-image project-module">
-					<Col xs={12} className="project-module">
-						<img src={Uber}></img>
-					</Col>
-					<Col xs={12} className="project-module small-image">
-						<img src={Uber1}></img>
-					</Col>
-					<Col
-						xs={12}
-						className="project-module small-image multi-image-right"
-					>
-						<img src={Uber2}></img>
-					</Col>
-				</Row>
+				{renderImages(projectData.data.images)}
+				<Col xs={12} className="project-module project-text-large">
+					<p className="text">{projectData.data.subTexts[0]}</p>
+				</Col>
 				<Row className="project-status project-module">
 					<Col xs={12}>
 						<span className="green-dash"></span>

@@ -6,7 +6,7 @@ const Footer = () => {
 	console.log("hello");
 	return (
 		<footer className="site-footer">
-			<Container className="footer-container">
+			<Container fluid className="footer-container">
 				<Row >
 					<Col lg={3}>
 						<div className="address">
