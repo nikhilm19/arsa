@@ -90,7 +90,7 @@ export class Header extends React.Component {
 							>
 								<ul className="nav-menu-list">
 									<Container fluid>
-										<Nav className="flex-column width-100">
+										<Nav className="width-100 justify-content-end flex-column flex-sm-row">
 										{this.renderMenuItems()}
 										</Nav>
 									</Container>
