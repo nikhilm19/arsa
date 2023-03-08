@@ -11,6 +11,7 @@ import Project from './components/Project';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer';
+import Work from './components/Work';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+  },
+  {
+    path: "/Work",
+    element: <Work/>,
   }
+
 ])
 root.render(
   <React.StrictMode>
