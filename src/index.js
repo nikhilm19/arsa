@@ -1,42 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import {
-  createBrowserRouter,
-  RouterProvider,
+	createBrowserRouter,
+	BrowserRouter,
+	Router,
+	RouterProvider,
+	Route,
+	Routes,
 } from "react-router-dom";
-import Project from './components/Project';
-import Header from './components/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './components/Footer';
-import Work from './components/Work';
+import Project from "./components/Project";
+import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Footer";
+import Work from "./components/Work";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
-  {
-    path: "/projects/:projectName",
-    element: <Project/>,
-  },
-  {
-    path: "/",
-    element: <App/>,
-  },
-  {
-    path: "/Work",
-    element: <Work/>,
-  }
-
-])
+	{
+		path: "/projects/:projectName",
+		element: <Project />,
+	},
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{
+				path: "Work",
+				element: <Work />,
+			},
+		],
+	},
+	// {
+	// 	path: "/Work",
+	// 	element: <Work />,
+	// },
+]);
 root.render(
-  <React.StrictMode>
-    <Header/>
-    <RouterProvider router={router}>
-      </RouterProvider>
-    <Footer/>
-  </React.StrictMode>
+	<React.StrictMode>
+		<BrowserRouter>
+			<Header />
+
+			<Routes>
+				<Route path="/" element={<App />} />
+				<Route index element={<App />} />
+				<Route path="Work" element={<Work />} />
+				<Route path="projects/:projectName" element={<Project />} />
+				{/* <Route path="*" element={<NoPage />} /> */}
+			</Routes>
+			<Footer />
+		</BrowserRouter>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
