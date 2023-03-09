@@ -248,6 +248,7 @@ span.green-dash {
 .work-project{
 	position: relative;
 	margin-bottom: 50px;
+	flex-direction: column;
 }
 img.project-img {
 	max-width:100%;
@@ -405,7 +406,8 @@ img.project-img {
 
 	.work-project{
 		position: relative;
-		margin-bottom: 20px;
+		
+		/* padding: 10px !important; */
 	}
 	img.project-img {
 		max-width:100%;
