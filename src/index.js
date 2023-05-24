@@ -16,6 +16,7 @@ import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Work from "./components/Work";
+import Contact from "./components/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -42,16 +43,23 @@ const router = createBrowserRouter([
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Header />
-
-			<Routes>
-				<Route path="/" element={<App />} />
-				<Route index element={<App />} />
-				<Route path="Work" element={<Work />} />
-				<Route path="projects/:projectName" element={<Project />} />
-				{/* <Route path="*" element={<NoPage />} /> */}
-			</Routes>
-			<Footer />
+			<div className="app">
+				<Header />
+				<div className="main">
+					<Routes>
+						<Route path="/" element={<App />} />
+						<Route index element={<App />} />
+						<Route path="Work" element={<Work />} />
+						<Route
+							path="projects/:projectName"
+							element={<Project />}
+						/>
+						<Route path="/Contact" element={<Contact />} />
+						{/* <Route path="*" element={<NoPage />} /> */}
+					</Routes>
+				</div>
+				<Footer />
+			</div>
 		</BrowserRouter>
 	</React.StrictMode>
 );

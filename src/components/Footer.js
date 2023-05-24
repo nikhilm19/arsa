@@ -1,9 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+	import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+	import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
-	console.log("hello");
 	return (
 		<footer className="site-footer">
 			<Container fluid className="footer-container">

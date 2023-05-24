@@ -24,7 +24,6 @@ export class Header extends React.Component {
 		);
 	};
 	renderMenuItems = () => {
-		
 		return [
 			{ name: "Work" },
 			{ name: "Blog" },
@@ -54,7 +53,7 @@ export class Header extends React.Component {
 	render() {
 		return (
 			<header className="App-header">
-				<Container fluid>
+				<Container>
 					<Row>
 						<Col xs={9} lg={4}>
 							<div className="arsa-logo">
@@ -89,11 +88,9 @@ export class Header extends React.Component {
 								}`}
 							>
 								<ul className="nav-menu-list">
-									<Container fluid>
-										<Nav className="width-100 justify-content-end flex-column flex-sm-row">
+									<Nav className="width-100 justify-content-end flex-column flex-sm-row">
 										{this.renderMenuItems()}
-										</Nav>
-									</Container>
+									</Nav>
 								</ul>
 							</nav>
 						</Col>
