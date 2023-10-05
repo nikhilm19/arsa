@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const HOST_URL = "https://us-central1-officearsa-eaaa6.cloudfunctions.net/backendApp";
-const HOST_URL = "http://localhost:8000";
+const HOST_URL = "https://us-central1-officearsa-eaaa6.cloudfunctions.net/backendApp";
+// const HOST_URL = "http://localhost:8000";
 
 const getProjects = async () => {
   try {
